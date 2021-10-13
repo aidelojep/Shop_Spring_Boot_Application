@@ -1,4 +1,4 @@
-package com.ecommerce.shop.repository;
+package com.ecommerce.shop.data.repository;
 
 import com.ecommerce.shop.data.model.Currency;
 import com.ecommerce.shop.data.model.Product;
@@ -24,10 +24,10 @@ public class ProductRepositoryTest{
 
     @Autowired
     ProductRepository productRepositoryImpl;
+
     @Before
     public void setUp() {
     }
-
 
     @After
     public void tearDown() {
@@ -42,9 +42,9 @@ public class ProductRepositoryTest{
         product.setCurrency(Currency.NGN);
         product.setDetails("How fr bro? Isaac get my green shirt??'");
         assertThat(product).isNotNull();
-        log.info("Product before saving ()-> {}", product);
+        log.info("Product before saving --> {}", product);
         productRepositoryImpl.save(product);
-        log.info("Product after saving ()-> {}",product);
+        log.info("Product after saving -> {}",product);
 
     }
     @Test
