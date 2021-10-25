@@ -48,12 +48,26 @@ public class ProductRepositoryTest{
 
     }
     @Test
-    public void whenFindAllProductIsCalledThenProductListIsReturned(){
+    public void whenFindAllProductIsCalledThenProductListIsReturnedTest(){
 
         List<Product> products = productRepositoryImpl.findAll();
-        assertEquals(4, products.size());
-        log.info("Product after saving ()-> {}", products);
-
+        assertThat(products).hasSize(4);
+        //assertEquals(4, products.size());
+        log.info("Product returned from database -> {}", products);
+    }
+    @Test
+    public void findExistingProductById(){
+      Product existingProduct = productRepositoryImpl.findById(110L).orElse(null);
+      assertThat(existingProduct).isNotNull();
+      log.info("Product ->{}", existingProduct);
+    }
+    @Test
+    public void deleteExistingProductById(){
+          Product existingProduct = productRepositoryImpl.findById(110L).orElse(null);
+          assertThat(existingProduct).isNotNull();
+          productRepositoryImpl.deleteById(110L);
+          assertThat(productRepositoryImpl.findById(110L).orElse(null)).isNull();
+          log.info("Product -> {}", existingProduct);
 
     }
 }
