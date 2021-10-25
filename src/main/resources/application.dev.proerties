@@ -1,0 +1,5 @@
+spring.datasource.driver-class-name=org.potsgresql.driver
+spring.datasource.url=jdbc:mysql://ec2-67-202-36-228.compute-1.amazonaws.com:5432/d3i553n60sbfjh
+spring.datasource.username=vnxmivxaegycab
+spring.datasource.password=3813b0df2dc4d932aae4cb35ba7c50f489b411fdb2a4aab5efbf336efdba6682
+spring.jpa.hibernate.ddl-auto=update
