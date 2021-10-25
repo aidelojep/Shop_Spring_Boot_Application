@@ -9,4 +9,6 @@ import java.util.List;
 public interface ProductServices {
     Product save(Product product);
     List<Product> findAll();
+    Product findById(Long id);
+    void deleteById(Long id);
 }
